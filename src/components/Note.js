@@ -11,11 +11,18 @@ class Note extends React.Component {
   }
 
   renderTagForm() {
-    return (
-      <span>
-        <i className="tag-button material-icons">add circle</i>
-      </span>
-    );
+    if (!this.props.newTag) {
+      return (
+        <span>
+          <i 
+            className="tag-button material-icons"
+            onClick={() => this.props.showTagForm()}
+          >
+            add circle
+          </i>
+        </span>
+      );
+    }
   }
 
   render() {
