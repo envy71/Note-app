@@ -50,7 +50,7 @@ class App extends Component {
   }
 
   deleteNote = (id) => {
-    const newNotesState = this.state.notes.filter((note) => note.id ! == id);
+    const newNotesState = this.state.notes.filter((note) => note.id !== id );
     axios.delete(urlFor(`notes\${id}`))
     .then((res) => this.setState({ notes: newNotesState }))
     .catch((err) => console.log(err.response.data) );
